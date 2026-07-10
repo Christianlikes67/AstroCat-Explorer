@@ -61,9 +61,3 @@ Enjoy animated cosmic effects.
 👨‍💻 Author
 
 Made with ❤️ by Christianlikes67.
-
-📄 License
-
-This project is for educational purposes and uses the public NASA APOD API.
-
-Du kan ændre "YOUR NAME" til dit eget navn, og hvis du uploader projektet til GitHub, kan jeg også lave et README med badges, screenshots og en flot projektoversigt.
