@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroCat Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars" aria-hidden="true"></div>
+    <div class="planet planet1" aria-hidden="true"></div>
+    <div class="planet planet2" aria-hidden="true"></div>
+    <div class="planet planet3" aria-hidden="true"></div>
+    <div class="twinkling" aria-hidden="true"></div>
+
+    <main>
+        <header class="site-header">
+            <nav class="nav" aria-label="Primary navigation">
+                <a class="brand" href="#home">AstroCat Explorer</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#mission">Mission</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero" id="home">
+            <div class="hero-text">
+                <h1>Explore the Universe<br>with your space cat.</h1>
+                <p>Welcome aboard, Commander. Every day NASA shares a new window into the cosmos, and today’s mission is yours to uncover.</p>
+                <button id="randomButton" type="button">🚀 Random Mission</button>
+            </div>
+            <div class="hero-image" role="img" aria-label="Space cat in a rocket">🐱🚀</div>
+        </section>
+
+        <section class="dashboard" id="mission">
+            <div class="card">
+                <h2>Mission Control</h2>
+                <label for="datePicker">Select a date</label>
+                <input type="date" id="datePicker">
+                <button id="searchButton" type="button">Discover Space</button>
+            </div>
+
+            <div class="card">
+                <h2>Status</h2>
+                <p id="status">Waiting for mission...</p>
+            </div>
+        </section>
+
+        <section class="picture-section" id="gallery">
+            <div class="picture-card">
+                <img id="spaceImage" src="" alt="NASA Astronomy Picture of the Day" loading="lazy">
+                <h2 id="pictureTitle">Today’s Cosmic Adventure</h2>
+                <p id="pictureDate" aria-live="polite"></p>
+                <p id="pictureDescription">Loading mission briefing...</p>
+            </div>
+        </section>
+
+        <section class="extras" aria-label="Mission extras">
+            <div class="small-card">
+                <h3>Space Cat Fact</h3>
+                <p id="catFact">Cats would definitely sleep through a rocket launch.</p>
+            </div>
+            <div class="small-card">
+                <h3>Mission Tip</h3>
+                <p>Click the Random Mission button to travel through time.</p>
+            </div>
+            <div class="small-card">
+                <h3>Gamer Corner</h3>
+                <p>Space + Cats + Gaming = Legendary Combo.</p>
+            </div>
+            <div class="small-card">
+                <h3>Achievement</h3>
+                <p id="achievement">Your journey has just begun.</p>
+            </div>
+        </section>
+
+        <section class="mission-stats" aria-label="Mission stats">
+            <div class="stat-card">
+                <h2>🏆 Missions Completed</h2>
+                <h1 id="missionCount">0</h1>
+            </div>
+            <div class="stat-card">
+                <h2>⭐ Cat Rank</h2>
+                <h1 id="catRank">Rookie Explorer</h1>
+            </div>
+        </section>
+
+        <section class="xp-section">
+            <h3>XP Progress</h3>
+            <div class="xp-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="XP progress">
+                <div id="xpFill"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>AstroCat Explorer</p>
+        <p>Powered by NASA APOD API</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
