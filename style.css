@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    background: radial-gradient(circle at top, #16213e 0%, #090b18 45%, #03040b 100%);
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+main {
+    width: min(1200px, calc(100% - 2rem));
+    margin: 0 auto;
+}
+
+.site-header {
+    padding: 1.5rem 0 1rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.brand {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: #79e8ff;
+    text-shadow: 0 0 20px cyan;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.25rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #f4f4f4;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #79e8ff;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#8be9fd 1px, transparent 1px),
+        radial-gradient(#ffd369 2px, transparent 2px);
+    background-size: 120px 120px, 180px 180px, 260px 260px;
+    animation: moveStars 120s linear infinite;
+    z-index: -3;
+}
+
+.twinkling {
+    position: fixed;
+    inset: 0;
+    background: transparent;
+    animation: twinkle 4s infinite alternate;
+    z-index: -2;
+}
+
+@keyframes moveStars {
+    from { transform: translateY(0); }
+    to { transform: translateY(-500px); }
+}
+
+@keyframes twinkle {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 3rem 0 2rem;
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    color: #d8d8d8;
+    margin-bottom: 1.75rem;
+    max-width: 45rem;
+}
+
+.hero-image {
+    font-size: clamp(7rem, 16vw, 11rem);
+    text-align: center;
+    animation: floatCat 4s ease-in-out infinite;
+    cursor: pointer;
+}
+
+@keyframes floatCat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-18px); }
+    100% { transform: translateY(0px); }
+}
+
+button {
+    border: none;
+    padding: 0.95rem 1.5rem;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(45deg, #7c3aed, #0ea5e9);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    font-weight: 700;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 0 20px #8b5cf6, 0 0 40px #0ea5e9;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.card,
+.picture-card,
+.small-card,
+.stat-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 25px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover,
+.picture-card:hover,
+.small-card:hover,
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+}
+
+.card {
+    padding: 1.8rem;
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+    color: #7dd3fc;
+}
+
+input {
+    width: 100%;
+    margin: 1rem 0 1.25rem;
+    padding: 0.95rem 1rem;
+    border-radius: 10px;
+    border: none;
+    background: #1b2035;
+    color: white;
+}
+
+.picture-section {
+    margin: 3rem 0;
+}
+
+.picture-card {
+    padding: 1.8rem;
+}
+
+.picture-card img {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+    margin-bottom: 1.4rem;
+    transition: transform 0.35s ease;
+}
+
+.picture-card img:hover {
+    transform: scale(1.01);
+}
+
+.picture-card h2 {
+    color: #7dd3fc;
+    margin-bottom: 0.6rem;
+}
+
+.picture-card p {
+    line-height: 1.8;
+}
+
+.extras {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin: 3rem 0;
+}
+
+.small-card {
+    padding: 1.4rem;
+}
+
+.small-card h3 {
+    margin-bottom: 0.7rem;
+    color: #facc15;
+}
+
+.mission-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.stat-card {
+    padding: 1.8rem;
+    text-align: center;
+}
+
+.stat-card h1 {
+    margin-top: 0.8rem;
+    font-size: 2.2rem;
+    color: #facc15;
+}
+
+.xp-section {
+    margin: 2.5rem 0 3rem;
+}
+
+.xp-bar {
+    height: 24px;
+    background: #151b2f;
+    border-radius: 40px;
+    overflow: hidden;
+    margin-top: 0.8rem;
+}
+
+#xpFill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00d4ff, #8b5cf6, #facc15);
+    transition: width 1s ease;
+}
+
+footer {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    color: #bdbdbd;
+}
+
+.shooting-star {
+    position: fixed;
+    width: 140px;
+    height: 2px;
+    background: white;
+    box-shadow: 0 0 20px white;
+    transform: rotate(-35deg);
+    pointer-events: none;
+    animation: shoot 2s linear forwards;
+    z-index: -1;
+}
+
+@keyframes shoot {
+    from {
+        transform: translate(0, 0) rotate(-35deg);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-800px, 500px) rotate(-35deg);
+        opacity: 0;
+    }
+}
+
+#rocket {
+    position: fixed;
+    font-size: 30px;
+    pointer-events: none;
+    transition: left 0.08s ease, top 0.08s ease;
+    z-index: 9999;
+}
+
+.planet {
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0.25;
+    z-index: -1;
+    animation: floatPlanet 14s ease-in-out infinite;
+}
+
+.planet1 {
+    width: 120px;
+    height: 120px;
+    background: #7c3aed;
+    top: 8%;
+    left: 80%;
+}
+
+.planet2 {
+    width: 70px;
+    height: 70px;
+    background: #00d4ff;
+    bottom: 12%;
+    left: 5%;
+}
+
+.planet3 {
+    width: 170px;
+    height: 170px;
+    background: #facc15;
+    bottom: -50px;
+    right: -40px;
+}
+
+@keyframes floatPlanet {
+    50% { transform: translateY(-25px); }
+}
+
+@media (max-width: 900px) {
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero,
+    .dashboard,
+    .mission-stats,
+    .extras {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        text-align: center;
+    }
+}
